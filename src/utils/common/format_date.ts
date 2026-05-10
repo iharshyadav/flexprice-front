@@ -1,3 +1,12 @@
+/**
+ * Format a date as a string (e.g., "Oct 12, 2023").
+ * Uses local timezone by default.
+ *
+ * @param date - The date to format (string or Date object)
+ * @param locale - The locale to use (defaults to 'en-US')
+ * @param options - Additional Intl.DateTimeFormatOptions to override defaults
+ * @returns Formatted date string or "Invalid Date"
+ */
 const formatDate = (date: string | Date, locale: string = 'en-US', options?: Intl.DateTimeFormatOptions): string => {
 	const parsedDate = new Date(date);
 
@@ -16,6 +25,12 @@ const formatDate = (date: string | Date, locale: string = 'en-US', options?: Int
 
 export default formatDate;
 
+/**
+ * Format a date and time as a string (e.g., "Oct 12, 2023, 02:30 PM").
+ *
+ * @param dateString - The date string to format
+ * @returns Formatted date and time string or "Invalid Date"
+ */
 export const formatDateTime = (dateString: string): string => {
 	const date = new Date(dateString);
 
@@ -36,6 +51,12 @@ export const formatDateTime = (dateString: string): string => {
 	return date.toLocaleString('en-US', options);
 };
 
+/**
+ * Format a date and time with seconds included.
+ *
+ * @param dateString - The date string to format
+ * @returns Formatted date and time string with seconds or "Invalid Date"
+ */
 export const formatDateWithMilliseconds = (dateString: string): string => {
 	const date = new Date(dateString);
 
@@ -59,6 +80,13 @@ export const formatDateWithMilliseconds = (dateString: string): string => {
 	return `${formattedDate}`;
 };
 
+/**
+ * Format a date and time with seconds and the timezone abbreviation (e.g., "GMT").
+ * Uses 24-hour time format.
+ *
+ * @param date - The date to format
+ * @returns Formatted date, time, and timezone string or "Invalid Date"
+ */
 export const formatDateTimeWithSecondsAndTimezone = (date: string | Date): string => {
 	const dateObj = typeof date === 'string' ? new Date(date) : date;
 

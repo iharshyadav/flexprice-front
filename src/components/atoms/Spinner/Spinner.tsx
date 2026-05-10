@@ -1,8 +1,7 @@
 import React from 'react';
 
-interface SpinnerProps {
+export interface SpinnerProps extends React.SVGProps<SVGSVGElement> {
 	size?: number;
-	className?: string;
 }
 
 const Spinner: React.FC<SpinnerProps> = ({ size = 24, className = '' }) => {

@@ -9,7 +9,7 @@ interface ChipColorScheme {
 	borderColor: string;
 }
 
-interface ChipProps {
+export interface ChipProps extends React.HTMLAttributes<HTMLDivElement> {
 	/** The main content of the chip */
 	label?: ReactNode;
 	/** Visual style variant of the chip */
